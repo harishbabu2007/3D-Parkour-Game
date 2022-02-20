@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     public float speed = 12, gravity = -19.6f, jumpHeight = 3f, sprintSpeed;
     private Vector3 velocity;
-    public Transform feet;
+    public Transform feet, respawnAnchor;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
@@ -78,6 +78,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             gravity = -19.6f;
+        }
+
+        if (hit.collider.gameObject.CompareTag("Void")){
+            transform.position = respawnAnchor.position;
         }
     }
 }
