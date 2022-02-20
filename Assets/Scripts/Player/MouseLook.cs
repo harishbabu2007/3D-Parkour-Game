@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     public float mouseSensitivity = 100f;
     public Transform playerBody;
-    private float xRotation = 0, angle = 10;
+    private float xRotation = 0;
     public Transform left, right;
     public LayerMask wallMask;
 
@@ -27,21 +27,5 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0, transform.localRotation.z);
         playerBody.Rotate(Vector3.up * mousex);
-        
-       /* bool rightCheckSphere = Physics.CheckSphere(right.position, .5f, wallMask);
-        bool leftCheckSphere = Physics.CheckSphere(left.position, .5f, wallMask);
-        
-        if (rightCheckSphere)
-        {
-            transform.localRotation = Quaternion.Euler(0,0,-angle);
-        } else if (leftCheckSphere)
-        {
-            transform.localRotation = Quaternion.Euler(0,0,angle);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
-        }
-        */
     }
 }
