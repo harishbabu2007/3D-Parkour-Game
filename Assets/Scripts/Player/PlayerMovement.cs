@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     public float speed = 12, gravity = -19.6f, jumpHeight = 3f, sprintSpeed;
     private Vector3 velocity;
-    public Transform feet, respawnAnchor;
+    public Transform feet, respawnAnchor, gunTransform, camTransform;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        camTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -61,9 +62,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             transform.localScale = new Vector3(1, 0.5f, 1);
+            gunTransform.localScale = new Vector3(gunTransform.localScale.x, gunTransform.localScale.y + 0.5f, gunTransform.localScale.z);
+            camTransform.localScale = new Vector3(camTransform.localScale.x, camTransform.localScale.y + 0.5f, camTransform.localScale.z);
         } else if (Input.GetKeyUp(KeyCode.C))
         {
             transform.localScale = new Vector3(1, 1, 1);
+            gunTransform.localScale = new Vector3(gunTransform.localScale.x, gunTransform.localScale.y - 0.5f, gunTransform.localScale.z);
+            camTransform.localScale = new Vector3(camTransform.localScale.x, camTransform.localScale.y - 0.5f, camTransform.localScale.z);
         }
     }
 
