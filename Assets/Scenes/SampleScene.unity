@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 204236252}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   jumpHeight: 3
   sprintSpeed: 10
   feet: {fileID: 1137603435}
+  respawnAnchor: {fileID: 0}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
@@ -209,11 +210,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 204236248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c8a3958b0e7354eb5f0141e5c3f426, type: 3}
+  m_Script: {fileID: 11500000, guid: 3009a2ca7bae01b46829d8edb031464a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 204236248}
-  spawn: {fileID: 0}
+  health: 100
 --- !u!1 &369482166
 GameObject:
   m_ObjectHideFlags: 0
