@@ -52,7 +52,7 @@ public class GunManager : MonoBehaviour
   {
     foreach (var item in gunsList)
     {
-      if (hit.gameObject.CompareTag(item.name))
+      if (hit.gameObject.CompareTag(item.name) && currentGunName == null)
       {
         currentGunName = item.name;
         item.gunObj.SetActive(true);
