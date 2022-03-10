@@ -26,13 +26,13 @@ public class Gun : MonoBehaviour
   public virtual void Shoot()
   {
     animator.SetTrigger("Fire");
+    ShowFlash();
 
     RaycastHit hit;
     if (Physics.Raycast(cam.position, cam.forward, out hit, range))
     {
-      AfterRaycast(hit);
-
-      Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+      GameObject bulletEffect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+      AfterRaycast(hit, bulletEffect);
     }
   }
 
@@ -42,5 +42,5 @@ public class Gun : MonoBehaviour
     muzzleFlash.GetComponent<ParticleSystem>().Play();
   }
 
-  public virtual void AfterRaycast(RaycastHit hit) { }
+  public virtual void AfterRaycast(RaycastHit hit, GameObject bulletEffect) { }
 }

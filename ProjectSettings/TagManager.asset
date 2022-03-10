@@ -10,6 +10,7 @@ TagManager:
   - Void
   - Pistol
   - Shotgun
+  - Bottle
   layers:
   - Default
   - TransparentFX

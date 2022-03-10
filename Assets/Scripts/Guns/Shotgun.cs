@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Shotgun : Gun
 {
-  public override void Shoot()
+  public override void AfterRaycast(RaycastHit hit, GameObject bulletEffect)
   {
-    base.Shoot();
-    ShowFlash();
+    base.AfterRaycast(hit, bulletEffect);
+    bulletEffect.AddComponent(typeof(Explosion));
   }
 }
