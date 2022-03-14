@@ -8,6 +8,9 @@ TagManager:
   - right
   - left
   - Void
+  - Pistol
+  - Shotgun
+  - Bottle
   layers:
   - Default
   - TransparentFX
