@@ -7,6 +7,6 @@ public class Shotgun : Gun
   public override void AfterRaycast(RaycastHit hit, GameObject bulletEffect)
   {
     base.AfterRaycast(hit, bulletEffect);
-    bulletEffect.AddComponent(typeof(Explosion));
+    firePoint.GetComponent<Explosion>().Explode();
   }
 }
