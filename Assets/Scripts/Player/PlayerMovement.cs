@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
   public float speed = 12, gravity = -19.6f, jumpHeight = 3f, sprintSpeed;
   private Vector3 velocity;
   public Transform feet, gunTransform, camTransform;
-  public float groundDistance = 0.4f;
+  public float groundDistance = 2f;
   public LayerMask groundMask;
   private bool isGrounded;
 

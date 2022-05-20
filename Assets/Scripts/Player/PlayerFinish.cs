@@ -11,6 +11,12 @@ public class PlayerFinish : MonoBehaviour
     if (hit.gameObject.CompareTag("Bottle"))
     {
       GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+      GameObject gun = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>().getCurrentGun();
+
+      if (gun != null)
+      {
+        gun.SetActive(false);
+      }
 
       FinishUI.SetActive(true);
       Cursor.lockState = CursorLockMode.None;

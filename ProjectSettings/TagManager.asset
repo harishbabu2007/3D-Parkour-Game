@@ -11,6 +11,13 @@ TagManager:
   - Pistol
   - Shotgun
   - Bottle
+  - WallJumpLeft
+  - WallJumpRight
+  - Enemy
+  - Subtitles
+  - HealthUI
+  - LevelLoading
+  - LoadSlider
   layers:
   - Default
   - TransparentFX

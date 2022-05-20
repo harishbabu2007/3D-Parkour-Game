@@ -48,6 +48,16 @@ public class GunManager : MonoBehaviour
     ThrownGun.GetComponent<Rigidbody>().AddForce(cam.forward * upwardThrowForce, ForceMode.Impulse);
   }
 
+  public GameObject getCurrentGun()
+  {
+    guns ThrowGunItem = gunsList.Find(item => item.name == currentGunName);
+    if (ThrowGunItem.gunObj != null)
+    {
+      return ThrowGunItem.gunObj;
+    }
+    return null;
+  }
+
   private void OnControllerColliderHit(ControllerColliderHit hit)
   {
     foreach (var item in gunsList)
