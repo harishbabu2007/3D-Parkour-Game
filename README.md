@@ -3,4 +3,4 @@
 
 
 # Bob release
-## The game "Bob" is now release pls check the releases
+## The game "Bob" is now released pls check the releases
