@@ -35,9 +35,7 @@ public class Gun : MonoBehaviour
     if (Physics.Raycast(cam.position, cam.forward, out hit, range))
     {
       TrailRenderer trail = Instantiate(bulletTrail, firePoint.position, Quaternion.identity);
-      StartCoroutine(SpawnTrail(trail, hit));
-
-      BeforeRaycast();
+      StartCoroutine(PostRayDetection(trail, hit));
 
       if (hit.collider.gameObject.tag == "Enemy")
       {
@@ -48,8 +46,10 @@ public class Gun : MonoBehaviour
     }
   }
 
-  private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+  private IEnumerator PostRayDetection(TrailRenderer trail, RaycastHit hit)
   {
+    BeforeRaycast();
+
     float time = 0;
     Vector3 startposition = trail.transform.position;
 
@@ -60,9 +60,19 @@ public class Gun : MonoBehaviour
 
       yield return null;
     }
+
     trail.transform.position = hit.point;
     GameObject bulletEffect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
     AfterRaycast(hit, bulletEffect);
+
+    if (hit.collider.gameObject.CompareTag("Glass"))
+    {
+      Glass glass = hit.collider.gameObject.GetComponent<Glass>();
+      if (glass != null)
+      {
+        glass.GlassBreak();
+      }
+    }
 
     if (hit.collider.gameObject.tag == "Enemy")
     {
@@ -70,6 +80,11 @@ public class Gun : MonoBehaviour
       {
         hit.collider.gameObject.GetComponent<Enemy>().Die();
       }
+    }
+
+    if (hit.rigidbody != null)
+    {
+      hit.rigidbody.AddForce(-hit.normal * 100f);
     }
 
     Destroy(trail.gameObject, trail.time);

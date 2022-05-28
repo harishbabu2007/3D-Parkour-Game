@@ -3466,6 +3466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6d19ccfe084804c8415d32e503f198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvlLoadingPanel: {fileID: 0}
+  slider: {fileID: 0}
+  clip: {fileID: 8300000, guid: 124706dbc1877b54ea9d68eda510cd78, type: 3}
 --- !u!4 &1300939390
 Transform:
   m_ObjectHideFlags: 0
@@ -5863,9 +5866,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1300939389}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1300939389}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LevelDone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127595248823531552, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2127595248826495394, guid: 2d8130bbb3c79574e81637a79ba00cf8, type: 3}
       propertyPath: m_Pivot.x
       value: 0

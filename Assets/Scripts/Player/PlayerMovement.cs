@@ -88,5 +88,14 @@ public class PlayerMovement : MonoBehaviour
     {
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    if (hit.gameObject.CompareTag("Glass"))
+    {
+      Glass glass = hit.gameObject.GetComponent<Glass>();
+      if (glass != null)
+      {
+        glass.GlassBreak();
+      }
+    }
   }
 }

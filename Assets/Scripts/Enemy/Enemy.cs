@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
   public Rigidbody[] rb;
   public Collider mainCollider;
   private Ray sight;
+  private bool isThere = false;
 
   void Start()
   {
@@ -64,10 +65,21 @@ public class Enemy : MonoBehaviour
 
       if (attackDist >= dist)
       {
-        animator.SetTrigger("Shoot");
-
         Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
         transform.LookAt(targetPosition);
+
+        sight.origin = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        sight.direction = transform.forward;
+
+        RaycastHit hit;
+        if (Physics.Raycast(sight, out hit, range) || isThere)
+        {
+          if (hit.collider.gameObject.CompareTag("Player") || isThere)
+          {
+            animator.SetTrigger("Shoot");
+            isThere = true;
+          }
+        }
       }
     }
   }
