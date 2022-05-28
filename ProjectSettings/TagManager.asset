@@ -18,6 +18,9 @@ TagManager:
   - HealthUI
   - LevelLoading
   - LoadSlider
+  - Glass
+  - BGM
+  - Glass Part
   layers:
   - Default
   - TransparentFX
