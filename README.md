@@ -2,5 +2,5 @@
 3D Parkour game made using unity
 
 
-# First Release
-## First Release Added please check the releases tab
+# Bob release
+## The game "Bob" is now released pls check the releases
